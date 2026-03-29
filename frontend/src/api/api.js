@@ -12,12 +12,12 @@ export const fetchBoardDetails = async (boardId) => {
 };
 
 export const createList = async (listData) => {
-    const response = await api.post('/lists', listData);
+    const response = await api.post('/api/lists', listData);
     return response.data;
 };
 
 export const createCard = async (cardData) => {
-    const response = await api.post('/cards', cardData);
+    const response = await api.post('/api/cards', cardData);
     return response.data;
 };
 
