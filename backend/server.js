@@ -44,6 +44,20 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+const initializeDB = require('./scripts/init-db');
+
+async function startServer() {
+  try {
+    // Automatically initialize tables before starting
+    await initializeDB();
+    
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  } catch (err) {
+    console.error('CRITICAL: Failed to initialize DB or start server:', err);
+    process.exit(1);
+  }
+}
+
+startServer();
