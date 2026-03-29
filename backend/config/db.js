@@ -1,12 +1,20 @@
 const { Pool } = require('pg');
 require('dotenv').config();
 
+const connectionString = process.env.DATABASE_URL;
+
+if (!connectionString) {
+  console.error('DATABASE_URL is not defined in the environment variables.');
+  process.exit(1);
+}
+
 const pool = new Pool({
-  user: process.env.DB_USER || 'postgres',
-  host: process.env.DB_HOST || 'localhost',
-  database: process.env.DB_NAME || 'postgres',
-  password: process.env.DB_PASSWORD || '3035@Devil',
-  port: process.env.DB_PORT ? Number(process.env.DB_PORT) : 5432,
+  connectionString,
+  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
+});
+
+pool.on('error', (err) => {
+  console.error('Unexpected database error:', err);
 });
 
 module.exports = pool;
