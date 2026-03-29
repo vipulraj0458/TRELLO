@@ -43,7 +43,7 @@ function KanbanListColumn({
     <div
       ref={listInnerRef}
       {...listDraggableProps}
-      className={`flex w-[272px] shrink-0 flex-col rounded-xl p-4 shadow-sm ${theme}`}
+      className={`flex w-[85vw] md:w-[272px] shrink-0 scroll-ml-6 snap-start flex-col rounded-xl p-4 shadow-sm ${theme}`}
     >
       <div
         {...listDragHandleProps}

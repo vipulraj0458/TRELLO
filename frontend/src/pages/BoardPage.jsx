@@ -89,15 +89,15 @@ function BoardPage() {
       ) : (
         <BoardContext.Provider value={boardContextValue}>
           <div className="flex flex-1 min-h-0 w-full overflow-hidden relative">
-            {/* Resizable Sidebar Wrapper */}
-            <div style={{ width: sidebarWidth }} className="h-full shrink-0">
+            {/* Resizable Sidebar Wrapper - Hidden on mobile */}
+            <div style={{ width: sidebarWidth }} className="h-full shrink-0 hidden md:block">
               <Sidebar />
             </div>
             
-            {/* Draggable Divider */}
+            {/* Draggable Divider - Hidden on mobile */}
             <div
               onMouseDown={startResizing}
-              className={`w-[4px] cursor-col-resize shrink-0 z-20 transition-colors ${isResizing ? 'bg-gray-400 opacity-100' : 'bg-gray-600 opacity-50 hover:bg-gray-400 hover:opacity-100'}`}
+              className={`w-[4px] cursor-col-resize shrink-0 z-20 transition-colors hidden md:block ${isResizing ? 'bg-gray-400 opacity-100' : 'bg-gray-600 opacity-50 hover:bg-gray-400 hover:opacity-100'}`}
             />
             
             <Main />

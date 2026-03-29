@@ -18,7 +18,7 @@ function AddList({ onAddList }) {
   };
 
   return (
-    <div className="w-[272px] shrink-0 self-start">
+    <div className="w-[85vw] md:w-[272px] shrink-0 self-start snap-start">
       <div className="flex flex-col rounded-xl bg-[#f1f2f4]/95 p-2 shadow-sm ring-1 ring-black/5">
         {show && (
           <div className="w-full">

@@ -47,7 +47,7 @@ export default function BoardMenu({ boardId, onEdit, onDelete, onArchive }) {
       <button
         type="button"
         onClick={toggleMenu}
-        className="flex h-8 w-8 items-center justify-center rounded-md bg-black/10 text-white/80 opacity-0 transition-all hover:bg-black/20 group-hover:opacity-100 focus:outline-none"
+        className="flex h-8 w-8 items-center justify-center rounded-md bg-black/10 text-white/80 opacity-100 transition-all hover:bg-black/20 lg:opacity-0 lg:group-hover:opacity-100 focus:outline-none"
         aria-label="Board actions"
       >
         <MoreHorizontal size={18} />

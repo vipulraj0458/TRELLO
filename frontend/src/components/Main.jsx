@@ -290,8 +290,8 @@ function Main() {
       </div>
 
       <div className="relative min-h-0 flex-1 overflow-hidden">
-        <div className="h-full overflow-x-auto overflow-y-hidden [-webkit-overflow-scrolling:touch]">
-          <div className="flex h-full items-start gap-4 pb-4">
+        <div className="h-full overflow-x-auto overflow-y-hidden snap-x snap-mandatory [-webkit-overflow-scrolling:touch]">
+          <div className="flex h-full items-start gap-4 px-4 pb-4 md:px-0">
             <DragDropContext onDragEnd={onDragEnd}>
               <Droppable
                 droppableId="all-lists"

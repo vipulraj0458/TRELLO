@@ -136,7 +136,7 @@ export default function LandingPage() {
               <h2 className="text-lg font-bold">Your Boards</h2>
             </div>
             
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {isLoading ? (
                 <div className="col-span-full py-10 text-center text-[#9fadbc]">Loading boards...</div>
               ) : (
@@ -155,10 +155,10 @@ export default function LandingPage() {
                   
                   <button
                     onClick={handleOpenCreateModal}
-                    className="flex min-h-[120px] flex-col items-center justify-center rounded-lg border border-dashed border-white/15 bg-[#a6c5e229] p-4 transition-all hover:border-white/30 hover:bg-[#a6c5e23d]"
+                    className="flex min-h-[100px] sm:min-h-[120px] flex-col items-center justify-center rounded-lg border border-dashed border-white/15 bg-[#a6c5e229] p-4 transition-all hover:border-white/30 hover:bg-[#a6c5e23d]"
                   >
                     <Plus size={24} className="text-[#dfe1e6]" />
-                    <span className="mt-2 text-sm font-semibold text-[#dfe1e6]">Create new board</span>
+                    <span className="mt-2 text-center text-xs sm:text-sm font-semibold text-[#dfe1e6]">Create new board</span>
                   </button>
                 </>
               )}
