@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Creating an axios instance that targets the backend server
 const api = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000'
 });
 
 export const fetchBoardDetails = async (boardId) => {
